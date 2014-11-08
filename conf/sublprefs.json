@@ -9,7 +9,7 @@
 	[
 		"*.pyc",
 		"._*",
-		".coverage"
+		".coverage",
 		".DS_Store",
 		".Spotlight-V100",
 		".Trashes",
@@ -18,7 +18,7 @@
 	],
 	"folder_exclude_patterns":
 	[
-		"*.egg-info"
+		"*.egg-info",
 		".git",
 		".hg",
 		".hgcheck",
