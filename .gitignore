@@ -1,0 +1,8 @@
+# Lots of junk goes in here.
+/caches/
+/backups/
+
+# Top secret stuff!
+/link/.ssh/authorized_keys
+/link/.ssh/id_*
+/link/.ssh/known_hosts

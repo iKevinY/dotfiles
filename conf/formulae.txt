@@ -1,0 +1,15 @@
+ack
+bash
+coreutils
+findutils
+gcc
+git
+hub
+lynx
+nano
+python
+python3
+readline
+terminal-notifier
+tree
+wget

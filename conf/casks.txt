@@ -1,0 +1,24 @@
+# Applications
+alfred
+appcleaner
+bettertouchtool
+dropbox
+flux
+github
+google-chrome
+handbrake
+skype
+spectacle
+sublime-text3
+totalterminal
+transmission
+vlc
+
+# Quick Look plugins
+qlcolorcode
+qlstephen
+qlmarkdown
+
+# Color pickers
+colorpicker-developer
+colorpicker-skalacolor
