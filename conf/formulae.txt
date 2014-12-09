@@ -5,6 +5,7 @@ findutils
 gcc
 git
 hub
+liquidprompt
 lynx
 nano
 python
