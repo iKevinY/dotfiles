@@ -30,27 +30,6 @@
 	# Find commits by commit message
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-[apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-
-[core]
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
-	# all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of
-	# a line
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-	# Make `git rebase` safer on OS X
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-	# Use nano as commit message editor; make justify operation (^J) wrap to
-	# 72 characters
-	editor = nano -r72
-
 [color]
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
@@ -68,9 +47,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
 
 # URL shorthands
 [url "git@github.com:"]
@@ -86,8 +62,30 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+[core]
+	# Use custom `.gitignore` and `.gitattributes`
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
+	# all kinds of trailing whitespace as an error.
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of
+	# a line
+	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	# Make `git rebase` safer on OS X
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	# Use nano as commit message editor; make justify operation (^J) wrap to
+	# 72 characters
+	editor = nano -r72
 [push]
 	default = simple
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
 [user]
 	name = Kevin Yap
 	email = me@kevinyap.ca
