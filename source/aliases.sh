@@ -107,3 +107,6 @@ alias reload="exec $SHELL -l"
 
 # Ping google.com to test connection
 alias pg="ping -qo google.com"
+
+# Shortcut to quickly time Python snippets
+alias timepy="python -m timeit"
