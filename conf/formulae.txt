@@ -1,5 +1,6 @@
 ack
 bash
+bash-completion
 coreutils
 findutils
 gcc
