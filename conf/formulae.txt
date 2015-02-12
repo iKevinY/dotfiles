@@ -5,6 +5,7 @@ coreutils
 findutils
 gcc
 git
+httpie
 hub
 liquidprompt
 lynx
