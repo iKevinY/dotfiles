@@ -17,9 +17,8 @@
 	rename = "!f() { git branch -m $1; }; f"
 	# Print all Git aliases
 	aliases = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort"
-	# Show verbose output about tags, branches or remotes
+	# Show verbose output about tags or remotes
 	tags = tag -l
-	branches = branch -a
 	remotes = remote -v
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
@@ -29,6 +28,14 @@
 	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
 	# Find commits by commit message
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
