@@ -17,3 +17,4 @@ readline
 terminal-notifier
 tree
 wget
+z
