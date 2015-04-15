@@ -1,10 +1,8 @@
 [alias]
-	# View abbreviated SHA, description, and history graph of the latest 25 commits
-	l = log --pretty=oneline -n 25 --graph --abbrev-commit
+	# View abbreviated SHA, description, and history graph of the latest 15 commits
+	l = log --pretty=oneline -n 15 --graph --abbrev-commit
 	# View the current working tree status using the short format
 	s = status -s
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD; git diff -F --patch-with-stat"
 	# Commit all changes
 	ca = !git add -A && git commit -av
 	# Switch to a branch, creating it if necessary
@@ -88,6 +86,7 @@
 	# Use nano as commit message editor; make justify operation (^J) wrap to
 	# 72 characters
 	editor = nano -r72
+    pager = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
 [push]
 	default = simple
 [merge]
