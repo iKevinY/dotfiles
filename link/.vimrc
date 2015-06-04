@@ -10,24 +10,28 @@ filetype plugin indent on
 set number                           " Enable line numbers
 set backspace=indent,eol,start       " Allow backspaces in insert mode
 set history=512                      " Store :cmdline history
-set showmode                         " Show current mode at bottom of screen
+set noshowmode                       " Hide mode (handled by vim-airline)
 set gcr=a:blinkon0                   " Disable cursor blink
 set visualbell                       " Disable audible bell
 set autoread                         " Reload files changed outside of Vim
 set hidden                           " Allow buffers to exist in background
+set cursorline                       " Highlight current line
 set ffs=unix,dos,mac                 " Use Unix as standard file type
 set magic                            " Improve regular expressions
 set showmatch                        " Show matching brackets
-set mat=2                            " Blink matching brackets for 0.2 seconds
+set mat=1                            " Blink matching brackets for 0.1s
 set nowrap                           " Disable line wrapping
 set list listchars=tab:\ \ ,trail:·  " Visual tabs and trailing spaces
 set linebreak
-set encoding=utf8
+set encoding=utf-8
 set ruler
 
 syntax on                            " Enable syntax highlighting
-colorscheme tomorrow-night-eighties  " Pick color scheme file
+colorscheme tomorrow-night-eighties  " Pick color scheme
 
+" ===== Airline Configuration =====
+set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " ===== Disable swap files =====
 set noswapfile

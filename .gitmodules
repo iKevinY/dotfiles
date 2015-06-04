@@ -13,3 +13,9 @@
 [submodule "link/.vim/bundle/vim-pathogen"]
 	path = link/.vim/bundle/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "link/.vim/bundle/vim-airline"]
+	path = link/.vim/bundle/vim-airline
+	url = git://github.com/bling/vim-airline.git
+[submodule "link/.vim/bundle/vim-fugitive"]
+	path = link/.vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
