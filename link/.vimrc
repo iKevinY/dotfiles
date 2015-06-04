@@ -36,7 +36,8 @@ set encoding=utf8
 set ruler
 
 syntax on                            " Enable syntax highlighting
-highlight LineNr ctermfg=black       " Change colour of line numbers
+colorscheme tomorrow-night-eighties  " Pick color scheme file
+
 
 " ===== Disable swap files =====
 set noswapfile
