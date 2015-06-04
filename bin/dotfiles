@@ -252,7 +252,7 @@ function do_stuff() {
 }
 
 # Enough with the functions, let's do stuff.
-export prompt_delay=10
+export prompt_delay=3
 
 # Ensure that we can actually, like, compile anything.
 if [[ ! "$(type -P gcc)" ]] && is_osx; then
