@@ -1,19 +1,9 @@
 " Vim Configuration, heavily inspired by @skwp's .vimrc
-
-" ===== Vundle Initialization =====
 set nocompatible
 
-filetype on                " fixes exit code on OS X
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
-
-call vundle#end()
+" ===== Pathogen Initialization =====
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 filetype plugin indent on
 
 " ===== General Configuration =====
