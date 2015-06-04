@@ -1,0 +1,6 @@
+[submodule "vendor/liquidprompt"]
+	path = vendor/liquidprompt
+	url = https://github.com/nojhan/liquidprompt.git
+[submodule "vendor/z"]
+	path = vendor/z
+	url = https://github.com/rupa/z.git

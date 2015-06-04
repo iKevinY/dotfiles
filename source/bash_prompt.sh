@@ -1,8 +1,4 @@
-if [ -f /usr/local/share/liquidprompt ]; then
-    . /usr/local/share/liquidprompt
-elif [ -f /usr/local/bin/liquidprompt ]; then
-  . /usr/local/bin/liquidprompt
-else
+if [ ! -f "HOME/.dotfiles/vendor/liquidprompt/liquidprompt" ]; then
   GRY="\[\e[38;5;241m\]"
   BLU="\[\e[0;34m\]"
   RED="\[\e[1;32m\]"
