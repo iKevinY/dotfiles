@@ -15,4 +15,5 @@ python3
 readline
 terminal-notifier
 tree
+vim
 wget
