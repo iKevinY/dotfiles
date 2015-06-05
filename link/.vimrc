@@ -22,6 +22,7 @@ set showmatch                        " Show matching brackets
 set mat=1                            " Blink matching brackets for 0.1s
 set nowrap                           " Disable line wrapping
 set list listchars=tab:\ \ ,trail:·  " Visual tabs and trailing spaces
+set confirm                          " Prompt to save changed files
 set linebreak
 set encoding=utf-8
 set ruler
