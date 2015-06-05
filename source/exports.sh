@@ -1,6 +1,4 @@
-# Make Sublime Text the default editor if installed, else nano
-# type subl &> /dev/null && export EDITOR="subl -n -w" || export EDITOR="nano"
-export EDITOR="nano"
+export EDITOR="vim"
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
