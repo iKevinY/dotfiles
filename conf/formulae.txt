@@ -7,7 +7,6 @@ gcc
 git
 httpie
 hub
-legit
 lynx
 nano
 python
