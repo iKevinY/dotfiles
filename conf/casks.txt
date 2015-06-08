@@ -3,6 +3,7 @@ alfred
 appcleaner
 bettertouchtool
 dropbox
+exa
 flux
 github
 google-chrome
