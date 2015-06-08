@@ -21,7 +21,6 @@ set ffs=unix,dos,mac                 " Use Unix as standard file type
 set magic                            " Improve regular expressions
 set showmatch                        " Show matching brackets
 set mat=1                            " Blink matching brackets for 0.1s
-set list listchars=tab:\ \ ,trail:·  " Visual tabs and trailing spaces
 set confirm                          " Prompt to save changed files
 set linebreak                        " Break at breakable characters on wrap
 set encoding=utf-8                   " Set file encoding
@@ -54,3 +53,11 @@ set incsearch        " Find matches while searching
 set ignorecase       " Ignore case when searching...
 set smartcase        " ...unless we type a capital
 set hlsearch         " Highlight searches by default
+
+" ===== Trailing Whitespace =====
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
