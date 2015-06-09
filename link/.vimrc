@@ -27,10 +27,6 @@ set encoding=utf-8                   " Set file encoding
 syntax on                            " Enable syntax highlighting
 colorscheme tomorrow-night-eighties  " Pick color scheme
 
-" ===== Airline Configuration =====
-set laststatus=2
-let g:airline_powerline_fonts = 1
-
 " ===== Disable swap files =====
 set noswapfile
 set nobackup
@@ -61,3 +57,11 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" ===== vim-airline =====
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+" ===== vim-expand-region =====
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
