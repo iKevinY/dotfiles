@@ -24,6 +24,7 @@ set mat=1                            " Blink matching brackets for 0.1s
 set confirm                          " Prompt to save changed files
 set linebreak                        " Break at breakable characters on wrap
 set encoding=utf-8                   " Set file encoding
+set updatetime=500                   " Decrease update time to 500ms
 syntax on                            " Enable syntax highlighting
 colorscheme tomorrow-night-eighties  " Pick color scheme
 
