@@ -38,7 +38,6 @@ set autoindent
 set smartindent
 set smarttab
 set shiftwidth=4
-set softtabstop=4
 set tabstop=2
 set expandtab
 
