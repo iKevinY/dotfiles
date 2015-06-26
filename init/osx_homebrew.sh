@@ -25,7 +25,7 @@ function brew_tap_kegs() {
   if (( ${#kegs[@]} > 0 )); then
     e_header "Tapping Homebrew kegs: ${kegs[*]}"
     for keg in "${kegs[@]}"; do
-      brew tap $keg
+      brew tap "$keg"
     done
   fi
 }
@@ -36,7 +36,7 @@ function brew_install_formulae() {
   if (( ${#formulae[@]} > 0 )); then
     e_header "Installing Homebrew formulae: ${formulae[*]}"
     for recipe in "${formulae[@]}"; do
-      brew install $recipe
+      brew install "$recipe"
     done
   fi
 }
@@ -56,14 +56,14 @@ brew_install_formulae
 brew cask info this-is-somewhat-annoying 2>/dev/null
 
 # Read list of Homebrew casks from /conf/casks.txt (ignoring commented lines).
-readarray casks < <(grep -v '^$\|^\s*\#' ${DOTFILES}/conf/casks.txt)
+readarray casks < <(grep -v '^$\|^\s*\#' "${DOTFILES}/conf/casks.txt")
 
 # Install Homebrew casks.
 casks=($(setdiff "${casks[*]}" "$(brew cask list 2>/dev/null)"))
 if (( ${#casks[@]} > 0 )); then
   e_header "Installing Homebrew casks: ${casks[*]}"
   for cask in "${casks[@]}"; do
-    brew cask install $cask
+    brew cask install "$cask"
   done
   brew cask cleanup
 fi
@@ -91,7 +91,7 @@ fi
 ##########
 
 # Read list of Homebrew casks from /conf/formulae.txt (ignoring commented lines).
-readarray formulae < <(grep -v '^$\|^\s*\#' ${DOTFILES}/conf/formulae.txt)
+readarray formulae < <(grep -v '^$\|^\s*\#' "${DOTFILES}/conf/formulae.txt")
 
 brew_install_formulae
 
@@ -101,7 +101,7 @@ brew_install_formulae
 local binroot="$(brew --config | awk '/HOMEBREW_PREFIX/ {print $2}')"/bin
 
 # bash
-if [[ "$(type -P $binroot/bash)" && "$(cat /etc/shells | grep -q "$binroot/bash")" ]]; then
+if [[ $(type -P "$binroot/bash") && $(grep -q "$binroot/bash" /etc/shells) ]]; then
   e_header "Adding $binroot/bash to the list of acceptable shells"
   echo "$binroot/bash" | sudo tee -a /etc/shells >/dev/null
 fi
