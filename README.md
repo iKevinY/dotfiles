@@ -50,9 +50,9 @@ To keep things easy, the `~/.bashrc` and `~/.bash_profile` files are extremely s
 
 
 ## Scripts
-In addition to the aforementioned [dotfiles][dotfiles] script, there are a few other [bin scripts](bin).
+In addition to the aforementioned [dotfiles](bin/dotfiles) script, there are a few other [bin scripts](bin).
 
-* [dotfiles](dotfiles) - (re)initialize dotfiles. It might ask for your password (for `sudo`).
+* [dotfiles](bin/dotfiles) - (re)initialize dotfiles. It might ask for your password (for `sudo`).
 * [src](link/.bashrc#L8-18) - (re)source all files in `/source` directory
 
 
