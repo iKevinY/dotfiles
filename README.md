@@ -4,7 +4,7 @@ This repository contains my [dotfiles](http://dotfiles.github.io), heavily inspi
 
 ## Installation
 
-**Warning**: You probably don't want to run this command unless you are me. The `dotfiles` script clones *this* repository into `~/.dotfiles`, and it may be broken at point in time. (Besides, it's not safe to run something you've `curl`'d anyways.)
+**Warning**: You probably don't want to run this command unless you are me. The `dotfiles` script clones *this* repository into `~/.dotfiles`, and it could be broken at point in time.
 
 ```bash
 bash -c "$(curl -fsSL https://raw.github.com/iKevinY/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
@@ -15,11 +15,11 @@ bash -c "$(curl -fsSL https://raw.github.com/iKevinY/dotfiles/master/bin/dotfile
 
 When [dotfiles](bin/dotfiles) is run for the first time, it does a few things:
 
-1. In Ubuntu, Git is installed if necessary via APT (it's already there in OSX).
+1. Git is installed if necessary.
 2. This repo is cloned into your user directory, under `~/.dotfiles`.
 3. Files in `/copy` are copied into `~/`. ([read more](#copy))
 4. Files in `/link` are symlinked into `~/`. ([read more](#link))
-5. You are prompted to choose scripts in `/init` to be executed. The installer attempts to only select relevant scripts, based on the detected OS and the script filename.
+5. You are prompted to choose scripts in `/init` to be executed.
 6. The chosen init scripts are executed in alphanumeric order. ([read more](#init))
 
 On subsequent runs, step 1 is skipped, step 2 just updates the already-existing repo, and step 5 remembers what you selected the last time. The other steps are the same.
@@ -42,7 +42,8 @@ Scripts in the [`/init`](/init) subdirectory will be executed. A whole bunch of 
 * The `/bin` directory contains executable shell scripts (including the [dotfiles](bin/dotfiles) script) and symlinks to executable shell scripts. This directory is added to the path.
 * The `/caches` directory contains cached files, used by some scripts or functions.
 * The `/conf` directory just exists. If a config file doesn't **need** to go in `~/`, reference it from the `/conf` directory.
-* The `/source` directory contains files that are sourced whenever a new shell is opened (in alphanumeric order, hence the funky names).
+* The `/source` directory contains files that are sourced whenever a new shell is opened (in alphanumeric order).
+* The `/vendor` directory contains third-party libraries.
 
 
 ## Aliases and Functions
