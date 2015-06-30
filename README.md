@@ -7,7 +7,7 @@ This repository contains my [dotfiles](http://dotfiles.github.io), heavily inspi
 **Warning**: You probably don't want to run this command unless you are me. The `dotfiles` script clones *this* repository into `~/.dotfiles`, and it could be broken at point in time.
 
 ```bash
-bash -c "$(curl -fsSL https://raw.github.com/iKevinY/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+bash -c "$(curl -fsSL http://git.io/iKevinY-dotfiles-script)" && source ~/.bashrc
 ```
 
 
