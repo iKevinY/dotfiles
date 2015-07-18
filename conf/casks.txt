@@ -17,8 +17,10 @@ vlc
 
 # Quick Look plugins
 qlcolorcode
-qlstephen
+qlimagesize
 qlmarkdown
+qlstephen
+suspicious-package
 
 # Color pickers
 colorpicker-developer
