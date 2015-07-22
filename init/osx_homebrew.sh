@@ -49,7 +49,7 @@ function brew_install_formulae() {
 #######
 
 # Ensure the cask keg and formula are installed.
-kegs=(caskroom/cask caskroom/versions)
+kegs=(caskroom/cask caskroom/versions caskroom/fonts)
 brew_tap_kegs
 formulae=(brew-cask)
 brew_install_formulae

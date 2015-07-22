@@ -25,3 +25,7 @@ suspicious-package
 # Color pickers
 colorpicker-developer
 colorpicker-skalacolor
+
+# Fonts
+font-open-sans
+font-source-code-pro
