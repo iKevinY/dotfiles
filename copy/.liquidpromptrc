@@ -22,8 +22,8 @@ LP_TEMP_THRESHOLD=60
 LP_ENABLE_TEMP=0
 
 # Max percent of screen width to use for path (default: 35)
+LP_ENABLE_SHORTEN_PATH=0
 LP_PATH_LENGTH=35
-LP_ENABLE_SHORTEN_PATH=1
 LP_PATH_KEEP=2
 
 # Display timestamp?
