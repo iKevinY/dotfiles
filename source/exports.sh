@@ -8,7 +8,7 @@ export HISTCONTROL=ignoreboth
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-# Prefer CAnadian English and use UTF-8
+# Prefer Canadian English and use UTF-8
 export LANG="en_CA"
 export LC_ALL="en_CA.UTF-8"
 
