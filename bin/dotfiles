@@ -267,9 +267,6 @@ fi
 
 # Initialize.
 if [[ ! -d $DOTFILES ]]; then
-  # $DOTFILES directory doesn't exist? Clone it!
-  new_dotfiles_install=1
-
   # Use longer prompt delay on initial installation
   prompt_delay=$INITIAL_PROMPT_DELAY
   e_header "Downloading dotfiles…"
@@ -301,7 +298,7 @@ mkdir -p "$DOTFILES/caches/init"
 
 # If backups are needed, this is where they'll go.
 backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
-backup=
+backup=""
 
 # Execute code for each file in these subdirectories.
 do_stuff "copy"
