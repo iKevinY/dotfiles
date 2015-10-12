@@ -69,3 +69,5 @@
 	log = true
 [credential]
 	helper = osxkeychain
+[include]
+	path = ~/.gitconfig.local

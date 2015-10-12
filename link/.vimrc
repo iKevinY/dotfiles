@@ -58,6 +58,12 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" ===== ~/.vimrc.local =====
+let $LOCALFILE=expand("~/.vimrc.local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
+
 " ===== vim-airline =====
 set laststatus=2
 let g:airline_powerline_fonts = 1
