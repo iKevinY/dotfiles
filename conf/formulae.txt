@@ -12,7 +12,7 @@ nano
 python
 python3
 readline
-terminal-notifier
+the_silver_searcher
 tree
 vim
 wget
