@@ -11,6 +11,7 @@ set number                           " Enable line numbers
 set backspace=indent,eol,start       " Allow backspaces in insert mode
 set history=512                      " Store :cmdline history
 set noshowmode                       " Hide mode (handled by vim-airline)
+set mouse=a                          " Enable mouse in all modes
 set scrolloff=3                      " Keep 3 lines above/below cursor
 set gcr=a:blinkon0                   " Disable cursor blink
 set visualbell                       " Disable audible bell
