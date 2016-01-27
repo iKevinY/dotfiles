@@ -7,7 +7,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 " ===== General Configuration =====
-set number                           " Enable line numbers
+set relativenumber                   " Enable hybrid line numbers
+set number
 set backspace=indent,eol,start       " Allow backspaces in insert mode
 set history=512                      " Store :cmdline history
 set noshowmode                       " Hide mode (handled by vim-airline)
@@ -27,8 +28,16 @@ set confirm                          " Prompt to save changed files
 set linebreak                        " Break at breakable characters on wrap
 set encoding=utf-8                   " Set file encoding
 set updatetime=500                   " Decrease update time to 500ms
+set splitbelow                       " Open new vertical panes below
+set splitright                       " Open new horizontal panes to the right
 syntax on                            " Enable syntax highlighting
 colorscheme tomorrow-night-eighties  " Pick color scheme
+
+" ===== Split navigation =====
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " ===== Disable swap files =====
 set noswapfile
