@@ -28,3 +28,6 @@
 [submodule "link/.vim/bundle/supertab"]
 	path = link/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "link/.vim/bundle/delimitMate"]
+	path = link/.vim/bundle/delimitMate
+	url = git://github.com/Raimondi/delimitMate.git
