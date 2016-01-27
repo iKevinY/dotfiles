@@ -25,3 +25,6 @@
 [submodule "link/.vim/bundle/vim-expand-region"]
 	path = link/.vim/bundle/vim-expand-region
 	url = git://github.com/terryma/vim-expand-region.git
+[submodule "link/.vim/bundle/supertab"]
+	path = link/.vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
