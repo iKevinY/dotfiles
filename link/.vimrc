@@ -8,7 +8,7 @@ filetype plugin indent on
 
 " ===== General Configuration =====
 set relativenumber                   " Enable hybrid line numbers
-set number
+set number                           "
 set backspace=indent,eol,start       " Allow backspaces in insert mode
 set history=512                      " Store :cmdline history
 set noshowmode                       " Hide mode (handled by vim-airline)
@@ -61,14 +61,6 @@ set ignorecase       " Ignore case when searching...
 set smartcase        " ...unless we type a capital
 set hlsearch         " Highlight searches by default
 
-" ===== Trailing Whitespace =====
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
 " ===== ~/.vimrc.local =====
 let $LOCALFILE=expand("~/.vimrc.local")
 if filereadable($LOCALFILE)
@@ -82,3 +74,7 @@ let g:airline_powerline_fonts = 1
 " ===== vim-expand-region =====
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" ===== vim-better-whitespace =====
+autocmd VimEnter * DisableWhitespace
+autocmd VimEnter * EnableWhitespace
