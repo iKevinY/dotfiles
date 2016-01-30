@@ -101,3 +101,14 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " ===== vim-better-whitespace =====
 autocmd VimEnter * DisableWhitespace
 autocmd VimEnter * EnableWhitespace
+" ===== vim-startify =====
+let g:ctrlp_reuse_window = 'startify'
+
+let g:startify_files_number = 5
+let g:startify_enable_special = 0
+
+let g:startify_list_order = ['files', 'dir', 'bookmarks']
+let g:startify_bookmarks = [ {'v': '~/.vimrc'}]
+
+highlight StartifyHeader  ctermfg=114
+let g:startify_custom_header = map(split(system('vim --version | head -n 1'), '\n'), '"   ". v:val') + [''] 
