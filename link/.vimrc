@@ -7,8 +7,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 " ===== General Configuration =====
-set relativenumber                   " Enable hybrid line numbers
-set number                           "
+set relativenumber                   " Enable relative line numbers
+set number                           " Use hybrid line numbers instead
 set backspace=indent,eol,start       " Allow backspaces in insert mode
 set history=512                      " Store :cmdline history
 set noshowmode                       " Hide mode (handled by vim-airline)
@@ -33,11 +33,30 @@ set splitright                       " Open new horizontal panes to the right
 syntax on                            " Enable syntax highlighting
 colorscheme tomorrow-night-eighties  " Pick color scheme
 
-" ===== Split navigation =====
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" ===== Key Bindings =====
+let mapleader = ","                  " Remap leader key to comma
+
+" Clear current search
+nnoremap <leader><space> :noh<cr>
+
+" Open a new vertical split and switch to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" Saner wrapped-line navigation
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
+" Magic regex searches
+nnoremap / /\v
+vnoremap / /\v
+
+" Saner split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " ===== Disable swap files =====
 set noswapfile
@@ -60,6 +79,10 @@ set incsearch        " Find matches while searching
 set ignorecase       " Ignore case when searching...
 set smartcase        " ...unless we type a capital
 set hlsearch         " Highlight searches by default
+
+" Use very magic mode while searching
+nnoremap / /\v
+vnoremap / /\v
 
 " ===== ~/.vimrc.local =====
 let $LOCALFILE=expand("~/.vimrc.local")
