@@ -73,13 +73,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>f za
 vnoremap <leader>f za
 
-
-" Swap semicolon and colon
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-
 " Saner wrapped-line navigation
 nnoremap k gk
 nnoremap j gj
