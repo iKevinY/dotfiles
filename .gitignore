@@ -2,6 +2,9 @@
 /caches/
 /backups/
 
+# Miscellaneous files to ignore
+.netrwhist
+
 # Top secret stuff!
 /link/.ssh/authorized_keys
 /link/.ssh/id_*
