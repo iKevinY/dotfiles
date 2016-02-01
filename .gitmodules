@@ -37,3 +37,6 @@
 [submodule "link/.vim/bundle/vim-startify"]
 	path = link/.vim/bundle/vim-startify
 	url = git://github.com/mhinz/vim-startify.git
+[submodule "link/.vim/bundle/rust.vim"]
+	path = link/.vim/bundle/rust.vim
+	url = git://github.com/rust-lang/rust.vim.git
