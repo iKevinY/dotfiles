@@ -18,7 +18,8 @@ set noshowmode                       " Hide mode (handled by plugins)
 set mouse=a                          " Enable mouse in all modes
 set clipboard=unnamed                " Sync unnamed register with clipboard
 set scrolloff=3                      " Keep 3 lines above/below cursor
-set guicursor=a:blinkon0             " Disable cursor blink
+set guicursor=a:blinkon0             " Use block cursor in all modes...
+set guicursor+=i:ver25-blinkon0      " ...except for in insert mode
 set visualbell                       " Disable audible bell
 set autoread                         " Reload files changed outside of Vim
 set hidden                           " Allow buffers to exist in background
@@ -129,7 +130,7 @@ let g:ctrlp_reuse_window = 'startify'
 
 let g:startify_files_number = 5
 let g:startify_enable_special = 0
-let g:startify_custom_indices = map(range(1, 100), 'string(v:val)')
+let g:startify_custom_indices = map(range(1, 9) + [0] + range(10,100), 'string(v:val)')
 
 let g:startify_list_order = ['files', 'dir', 'bookmarks']
 let g:startify_bookmarks = [{'v': '~/.vimrc'}]
