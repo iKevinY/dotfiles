@@ -67,7 +67,10 @@ let mapleader = ","                  " Remap leader key to comma
 nnoremap <leader><space> :noh<cr>
 
 " Open a new vertical split and switch to it
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>n <C-w>v<C-w>l
+
+" Close the current buffer
+nnoremap <leader>w :bd<cr>
 
 " Toggle fold
 nnoremap <leader>f za
