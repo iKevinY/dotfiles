@@ -107,8 +107,6 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " ===== vim-better-whitespace =====
@@ -129,5 +127,4 @@ let g:startify_custom_indices = map(range(1, 9) + [0] + range(10,100), 'string(v
 let g:startify_list_order = ['files', 'dir', 'bookmarks']
 let g:startify_bookmarks = [{'v': '~/.vimrc'}]
 
-let g:startify_custom_header =
-    \ map(split(system('vim --version | head -n1 | sed -e "s/ ([^()]*)//"'), '\n'), '"   ". v:val') + ['']
+let g:startify_custom_header = ["   " . system('vim --version | head -n1 | sed -e "s/ ([^()]*)//"')[:-2], '']
