@@ -20,6 +20,7 @@ set clipboard=unnamed                " Sync unnamed register with clipboard
 set scrolloff=3                      " Keep 3 lines above/below cursor
 set guicursor=a:blinkon0             " Use block cursor in all modes...
 set guicursor+=i:ver25-blinkon0      " ...except for in insert mode
+set guioptions-=rL                   " Remove scroll bars
 set visualbell                       " Disable audible bell
 set autoread                         " Reload files changed outside of Vim
 set hidden                           " Allow buffers to exist in background
@@ -86,6 +87,9 @@ nnoremap gj j
 nnoremap / /\v
 vnoremap / /\v
 
+" Delete one word backwards (insert and command-line mode)
+noremap! <A-BS> <C-W>
+
 " Saner split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -111,6 +115,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#show_tab_type = 0
+
 
 " ===== vim-better-whitespace =====
 autocmd VimEnter * DisableWhitespace
