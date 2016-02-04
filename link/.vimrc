@@ -132,6 +132,7 @@ let g:ctrlp_reuse_window = 'startify'
 
 let g:startify_files_number = 5
 let g:startify_enable_special = 0
+let g:startify_change_to_vcs_root = 1
 let g:startify_custom_indices = map(range(1, 9) + [0] + range(10,100), 'string(v:val)')
 
 let g:startify_list_order = ['files', 'dir', 'bookmarks']
