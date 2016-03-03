@@ -44,7 +44,7 @@ set nowb
 
 " Indentation
 set autoindent
-set smartindent
+set nosmartindent
 set smarttab
 set shiftwidth=4
 set tabstop=2
@@ -109,6 +109,10 @@ endif
 
 " ===== CtrlP =====
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" ===== goyo / limelight =====
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " ===== vim-airline =====
 set laststatus=2

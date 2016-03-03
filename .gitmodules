@@ -40,3 +40,9 @@
 [submodule "link/.vim/bundle/rust.vim"]
 	path = link/.vim/bundle/rust.vim
 	url = git://github.com/rust-lang/rust.vim.git
+[submodule "link/.vim/bundle/limelight.vim"]
+	path = link/.vim/bundle/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule "link/.vim/bundle/goyo.vim"]
+	path = link/.vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
