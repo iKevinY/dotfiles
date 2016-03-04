@@ -1,5 +1,3 @@
-" Vim Configuration, heavily inspired by @skwp's .vimrc
-set nocompatible
 
 " ===== Pathogen Initialization =====
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -114,9 +112,11 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 function! s:goyo_enter()
     Limelight
     set background=dark
-    colorscheme pencil
+    let g:seoul256_background = 236
+    colorscheme seoul256
     set guifont=Cousine:h22
     set linespace=6
+    set scrolloff=99
 endfunction
 
 function! s:goyo_leave()
@@ -124,6 +124,7 @@ function! s:goyo_leave()
     colorscheme tomorrow-night-eighties  
     set guifont=Source\ Code\ Pro:h14
     set linespace=0
+    set scrolloff=3
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -145,6 +146,10 @@ autocmd VimEnter * EnableWhitespace
 " ===== vim-expand-region =====
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" ===== vim-markdown =====
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
 
 " ===== vim-startify =====
 let g:ctrlp_reuse_window = 'startify'

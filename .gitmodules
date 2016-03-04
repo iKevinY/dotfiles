@@ -49,3 +49,9 @@
 [submodule "link/.vim/bundle/vim-colors-pencil"]
 	path = link/.vim/bundle/vim-colors-pencil
 	url = https://github.com/reedes/vim-colors-pencil
+[submodule "link/.vim/bundle/seoul256.vim"]
+	path = link/.vim/bundle/seoul256.vim
+	url = https://github.com/junegunn/seoul256.vim
+[submodule "link/.vim/bundle/vim-markdown"]
+	path = link/.vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
