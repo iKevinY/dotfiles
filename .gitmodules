@@ -46,3 +46,6 @@
 [submodule "link/.vim/bundle/goyo.vim"]
 	path = link/.vim/bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule "link/.vim/bundle/vim-colors-pencil"]
+	path = link/.vim/bundle/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil
