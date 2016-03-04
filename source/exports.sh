@@ -23,3 +23,6 @@ export GREP_OPTIONS="--color=auto"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# More convenient trigger sequence for fzf
+export FZF_COMPLETION_TRIGGER=','
