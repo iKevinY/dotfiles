@@ -31,6 +31,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 
+# Enable fzf if installed
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Source vendored submodules
 . $HOME/.dotfiles/vendor/z/z.sh
 . $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
