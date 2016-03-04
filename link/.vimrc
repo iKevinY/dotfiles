@@ -111,8 +111,23 @@ endif
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " ===== goyo / limelight =====
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+function! s:goyo_enter()
+    Limelight
+    set background=dark
+    colorscheme pencil
+    set guifont=Cousine:h22
+    set linespace=6
+endfunction
+
+function! s:goyo_leave()
+    Limelight!
+    colorscheme tomorrow-night-eighties  
+    set guifont=Source\ Code\ Pro:h14
+    set linespace=0
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " ===== vim-airline =====
 set laststatus=2
