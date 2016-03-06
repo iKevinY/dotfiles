@@ -55,3 +55,6 @@
 [submodule "link/.vim/bundle/vim-markdown"]
 	path = link/.vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "link/.vim/bundle/vim-peekaboo"]
+	path = link/.vim/bundle/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo
