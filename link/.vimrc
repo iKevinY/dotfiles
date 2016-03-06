@@ -114,14 +114,14 @@ function! s:goyo_enter()
     set background=dark
     let g:seoul256_background = 236
     colorscheme seoul256
-    set guifont=Cousine:h22
-    set linespace=6
+    set guifont=Cousine:h24
+    set linespace=8
     set scrolloff=99
 endfunction
 
 function! s:goyo_leave()
     Limelight!
-    colorscheme tomorrow-night-eighties  
+    colorscheme tomorrow-night-eighties
     set guifont=Source\ Code\ Pro:h14
     set linespace=0
     set scrolloff=3
