@@ -140,11 +140,6 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_tab_type = 0
 
-
-" ===== vim-better-whitespace =====
-autocmd VimEnter * DisableWhitespace
-autocmd VimEnter * EnableWhitespace
-
 " ===== vim-expand-region =====
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
