@@ -1,10 +1,28 @@
 " Vim Configuration, heavily inspired by @skwp's .vimrc
 set nocompatible
 
-" ===== Pathogen Initialization =====
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-filetype plugin indent on
+" ===== vim-plug Initialization =====
+call plug#begin('~/.vim/plugins')
+Plug 'Raimondi/delimitMate'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'mhinz/vim-startify'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'plasticboy/vim-markdown'
+Plug 'reedes/vim-colors-pencil'
+Plug 'rust-lang/rust.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-pathogen'
+Plug 'tpope/vim-sleuth'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 
 " ===== General Configuration =====
 syntax on                            " Enable syntax highlighting

@@ -1,57 +1,6 @@
 [submodule "vendor/liquidprompt"]
 	path = vendor/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
-[submodule "link/.vim/bundle/vim-gitgutter"]
-	path = link/.vim/bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "link/.vim/bundle/ctrlp.vim"]
-	path = link/.vim/bundle/ctrlp.vim
-	url = git://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "link/.vim/bundle/vim-pathogen"]
-	path = link/.vim/bundle/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
-[submodule "link/.vim/bundle/vim-airline"]
-	path = link/.vim/bundle/vim-airline
-	url = git://github.com/bling/vim-airline.git
-[submodule "link/.vim/bundle/vim-fugitive"]
-	path = link/.vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "link/.vim/bundle/vim-sleuth"]
-	path = link/.vim/bundle/vim-sleuth
-	url = git://github.com/tpope/vim-sleuth.git
-[submodule "link/.vim/bundle/vim-expand-region"]
-	path = link/.vim/bundle/vim-expand-region
-	url = git://github.com/terryma/vim-expand-region.git
-[submodule "link/.vim/bundle/supertab"]
-	path = link/.vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
-[submodule "link/.vim/bundle/delimitMate"]
-	path = link/.vim/bundle/delimitMate
-	url = git://github.com/Raimondi/delimitMate.git
-[submodule "link/.vim/bundle/vim-better-whitespace"]
-	path = link/.vim/bundle/vim-better-whitespace
-	url = git://github.com/ntpeters/vim-better-whitespace
-[submodule "link/.vim/bundle/vim-startify"]
-	path = link/.vim/bundle/vim-startify
-	url = git://github.com/mhinz/vim-startify.git
-[submodule "link/.vim/bundle/rust.vim"]
-	path = link/.vim/bundle/rust.vim
-	url = git://github.com/rust-lang/rust.vim.git
-[submodule "link/.vim/bundle/limelight.vim"]
-	path = link/.vim/bundle/limelight.vim
-	url = https://github.com/junegunn/limelight.vim
-[submodule "link/.vim/bundle/goyo.vim"]
-	path = link/.vim/bundle/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
-[submodule "link/.vim/bundle/vim-colors-pencil"]
-	path = link/.vim/bundle/vim-colors-pencil
-	url = https://github.com/reedes/vim-colors-pencil
-[submodule "link/.vim/bundle/seoul256.vim"]
-	path = link/.vim/bundle/seoul256.vim
-	url = https://github.com/junegunn/seoul256.vim
-[submodule "link/.vim/bundle/vim-markdown"]
-	path = link/.vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
-[submodule "link/.vim/bundle/vim-peekaboo"]
-	path = link/.vim/bundle/vim-peekaboo
-	url = https://github.com/junegunn/vim-peekaboo
+[submodule "vendor/vim-plug"]
+	path = vendor/vim-plug
+	url = https://github.com/junegunn/vim-plug
