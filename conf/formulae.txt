@@ -17,3 +17,4 @@ the_silver_searcher
 tree
 vim
 wget
+z

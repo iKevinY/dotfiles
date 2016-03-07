@@ -34,9 +34,11 @@ command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] &
 # Enable fzf if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Source vendored submodules
-. $HOME/.dotfiles/vendor/z/z.sh
-. $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
+# Enable z if installed
+[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
+
+# Source liquidprompt from vendor directory
+source $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
 
 # Return true so first prompt uses 0 as last exit code
 true
