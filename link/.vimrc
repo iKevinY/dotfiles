@@ -1,3 +1,5 @@
+" Vim Configuration, heavily inspired by @skwp's .vimrc
+set nocompatible
 
 " ===== Pathogen Initialization =====
 runtime bundle/vim-pathogen/autoload/pathogen.vim
