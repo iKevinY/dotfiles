@@ -19,8 +19,6 @@ When [dotfiles](bin/dotfiles) is run for the first time, it does a few things:
 2. This repo is cloned into your user directory, under `~/.dotfiles`.
 3. Files in `/copy` are copied into `~/`. ([read more](#copy))
 4. Files in `/link` are symlinked into `~/`. ([read more](#link))
-5. You are prompted to choose scripts in `/init` to be executed.
-6. The chosen init scripts are executed in alphanumeric order. ([read more](#init))
 
 On subsequent runs, step 1 is skipped, step 2 just updates the already-existing repo, and step 5 remembers what you selected the last time. The other steps are the same.
 
@@ -31,7 +29,7 @@ Any file in the [`/copy`](/copy) subdirectory will be copied into `~/`. Any file
 Any file in the [`/link`](/link) subdirectory gets symlinked into `~/` with `ln -s`. Edit one or the other, and you change the file in both places. Don't link files containing sensitive data, or you might accidentally commit that data! If you're linking a directory that might contain sensitive data (like `~/.ssh`) add the sensitive files to your [.gitignore](.gitignore) file!
 
 ### /init
-Scripts in the [`/init`](/init) subdirectory will be executed. A whole bunch of things will be installed, but _only_ if they aren't already.
+Scripts in the [`/init`](/init) subdirectory can be executed manually.
 
 * OS X system defaults via the [init/osx_defaults.sh](init/osx_defaults.sh) script
 * Homebrew formulae & casks via the [init/osx_homebrew.sh](init/osx_homebrew.sh) script
