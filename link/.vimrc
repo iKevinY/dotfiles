@@ -135,7 +135,7 @@ function! s:goyo_enter()
     set background=dark
     let g:seoul256_background = 236
     colorscheme seoul256
-    set guifont=Cousine:h24
+    set guifont=Cousine:h22
     set linespace=8
     set scrolloff=99
 endfunction
