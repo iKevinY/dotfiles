@@ -1,6 +1,6 @@
 # iKevinY/dotfiles
 
-This repository contains my [dotfiles](http://dotfiles.github.io), heavily inspired by [@mathiasbynens](https://github.com/mathiasbynens/dotfiles) and [@cowboy](https://github.com/cowboy/dotfiles).
+This repository contains my [dotfiles](http://dotfiles.github.io), heavily inspired by [@mathiasbynens](https://github.com/mathiasbynens/dotfiles), [@cowboy](https://github.com/cowboy/dotfiles), and [@holman](https://github.com/holman/dotfiles).
 
 ## Installation
 
