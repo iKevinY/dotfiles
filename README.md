@@ -28,11 +28,11 @@ Any file in the [`/copy`](/copy) subdirectory will be copied into `~/`. Any file
 ### /link
 Any file in the [`/link`](/link) subdirectory gets symlinked into `~/` with `ln -s`. Edit one or the other, and you change the file in both places. Don't link files containing sensitive data, or you might accidentally commit that data! If you're linking a directory that might contain sensitive data (like `~/.ssh`) add the sensitive files to your [.gitignore](.gitignore) file!
 
-### /init
-Scripts in the [`/init`](/init) subdirectory can be executed manually.
+### /scripts
+Scripts in the [`/scripts`](/scripts) subdirectory can be executed manually.
 
-* OS X system defaults via the [init/osx_defaults.sh](init/osx_defaults.sh) script
-* Homebrew formulae & casks via the [init/osx_homebrew.sh](init/osx_homebrew.sh) script
+* OS X system defaults via the [scripts/osx_defaults.sh](scripts/osx_defaults.sh) script
+* Homebrew formulae & casks via the [scripts/osx_homebrew.sh](scripts/osx_homebrew.sh) script
 
 ### Other Subdirectories
 
