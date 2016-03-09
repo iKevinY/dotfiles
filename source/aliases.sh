@@ -110,3 +110,6 @@ alias pg="ping -qo google.com"
 
 # Shortcut to quickly time Python snippets
 alias timepy="python -m timeit"
+
+# Shorter dotfile update command
+alias dot="dotfiles"
