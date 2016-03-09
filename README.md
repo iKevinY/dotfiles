@@ -22,13 +22,17 @@ When [dotfiles](bin/dotfiles) is run for the first time, it does a few things:
 
 On subsequent runs, step 1 is skipped, step 2 just updates the already-existing repo, and step 5 remembers what you selected the last time. The other steps are the same.
 
-### /copy
+### `Brewfile`
+
+Calling `brew bundle` from the root of this repository will install all the dependencies in that file.
+
+### `/copy`
 Any file in the [`/copy`](/copy) subdirectory will be copied into `~/`. Any file that _needs_ to be modified with personal information (like anything containing an email address and private key) should be _copied_ into `~/`. Because the file you'll be editing is no longer in `~/.dotfiles`, it's less likely to be accidentally committed into your public dotfiles repo. Files such as `.hushlogin` which never need to be edited can also be placed in this directory.
 
-### /link
+### `/link`
 Any file in the [`/link`](/link) subdirectory gets symlinked into `~/` with `ln -s`. Edit one or the other, and you change the file in both places. Don't link files containing sensitive data, or you might accidentally commit that data! If you're linking a directory that might contain sensitive data (like `~/.ssh`) add the sensitive files to your [.gitignore](.gitignore) file!
 
-### /scripts
+### `/scripts`
 Scripts in the [`/scripts`](/scripts) subdirectory can be executed manually.
 
 * OS X system defaults via the [scripts/osx_defaults.sh](scripts/osx_defaults.sh) script
