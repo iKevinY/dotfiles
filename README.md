@@ -20,7 +20,7 @@ When [dotfiles](bin/dotfiles) is run for the first time, it does a few things:
 3. Files in `/copy` are copied into `~/`. ([read more](#copy))
 4. Files in `/link` are symlinked into `~/`. ([read more](#link))
 
-On subsequent runs, step 1 is skipped, step 2 just updates the already-existing repo, and step 5 remembers what you selected the last time. The other steps are the same.
+On subsequent runs, step 1 is skipped, and step 2 updates the already-existing repo.
 
 ### `Brewfile`
 
