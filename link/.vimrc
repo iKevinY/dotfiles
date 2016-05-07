@@ -20,6 +20,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
+Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -116,6 +117,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Next/previous buffer
+nnoremap <C-S-Tab> :bp<CR>
+nnoremap <C-Tab>   :bn<CR>
 nnoremap <Leader>[ :bp<CR>
 nnoremap <Leader>] :bn<CR>
 
@@ -129,10 +132,11 @@ endif
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " ===== goyo / limelight =====
+let g:seoul256_background = 236
+set background=dark
+
 function! s:goyo_enter()
     Limelight
-    set background=dark
-    let g:seoul256_background = 236
     colorscheme seoul256
     set guifont=Cousine:h22
     set linespace=8
@@ -178,3 +182,6 @@ let g:startify_list_order = ['files', 'dir', 'bookmarks']
 let g:startify_bookmarks = [{'v': '~/.vimrc'}]
 
 let g:startify_custom_header = ["   " . system('vim --version | head -n1 | sed -e "s/ ([^()]*)//"')[:-2], '']
+
+" ===== YouCompleteMe =====
+nnoremap <C-]> :YcmCompleter GoTo<CR>
