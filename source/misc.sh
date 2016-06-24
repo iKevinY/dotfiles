@@ -35,7 +35,7 @@ command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] &
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Enable z if installed
-[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
+command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 
 # Source liquidprompt from vendor directory
 source $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
