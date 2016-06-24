@@ -152,6 +152,11 @@ function do_stuff() {
     # Do stuff.
     "$1_do" "$base" "$file"
   done
+
+  # Manually fix symlink to ~/.vim/autoload/plug.vim
+  rm -f "$HOME/.vim/autoload/plug.vim"
+  mkdir -p "$HOME/.vim/autoload"
+  ln -s "$HOME/.dotfiles/vendor/vim-plug/plug.vim" "$HOME/.vim/autoload/plug.vim"
 }
 
 # Ensure that we can actually, like, compile anything.

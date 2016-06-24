@@ -3,6 +3,7 @@
 /backups/
 
 # Ignore plugin submodules managed by vim-plug
+link/.vim/autoload
 link/.vim/plugins
 
 # Miscellaneous files to ignore
