@@ -28,6 +28,11 @@ else
 	alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 fi
 
+# Shortcuts for Cargo commands
+alias cb='cargo build'
+alias cr='cargo run'
+alias ct='cargo test'
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
@@ -61,7 +66,7 @@ command -v hd > /dev/null || alias hd="hexdump -C"
 command -v md5sum > /dev/null || alias md5sum="md5"
 
 # OS X has no `sha1sum`, so use `shasum` as a fallback
-command -v sha1sum > /dev/null || alias sha1sum="shasum"
+command -v sha1sum > /dev/null || alias sha1sum="shasum" && alias sha256sum="shasum -a 256"
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
