@@ -29,9 +29,11 @@ else
 fi
 
 # Shortcuts for Cargo commands
-alias cb='cargo build'
-alias cr='cargo run'
-alias ct='cargo test'
+if command -v cargo >/dev/null 2>&1; then
+	alias cb='cargo build'
+	alias cr='cargo run'
+	alias ct='cargo test'
+fi
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
