@@ -8,6 +8,13 @@ function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
+# Exports all variables present in an .env file
+function expenv() {
+	local envFile=${1:-".env"}
+	export $(cat "$envFile" | xargs)
+	echo "Exported variables found in \`$envFile\`"
+}
+
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
 	local tmpFile="${@%/}.tar"
