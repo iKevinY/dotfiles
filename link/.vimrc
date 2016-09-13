@@ -55,6 +55,7 @@ set updatetime=500                   " Decrease update time to 500ms
 set splitbelow                       " Open new vertical panes below
 set splitright                       " Open new horizontal panes to the right
 set diffopt+=vertical                " Use vertical diffs by default
+set breakindent                      " Visually indent wrapped lines
 
 " Disable swap files
 set noswapfile
