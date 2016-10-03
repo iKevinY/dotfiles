@@ -7,6 +7,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
+Plug 'jacoborus/tender'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
@@ -27,8 +28,8 @@ call plug#end()
 
 " ===== General Configuration =====
 syntax on                            " Enable syntax highlighting
-colorscheme tomorrow-night-eighties  " Pick color scheme
-set guifont=Source\ Code\ Pro:h14    " Pick font (for MacVim)
+colorscheme tender
+set guifont=Source\ Code\ Pro:h14
 set relativenumber                   " Enable relative line numbers
 set number                           " Use hybrid line numbers instead
 set backspace=indent,eol,start       " Allow backspaces in insert mode
@@ -154,6 +155,10 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" ===== tender =====
+let g:airline_theme = 'tender'
+let macvim_skip_colorscheme = 1
 
 " ===== vim-airline =====
 set laststatus=2
