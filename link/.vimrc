@@ -138,11 +138,15 @@ let g:seoul256_background = 236
 set background=dark
 
 function! s:goyo_enter()
-    Limelight
+    if (&ft=='md')
+        Limelight
+        set guifont=Cousine:h22
+        set scrolloff=99
+    else
+        set guifont=Cousine:h16
+    endif
     colorscheme seoul256
-    set guifont=Cousine:h22
     set linespace=8
-    set scrolloff=99
 endfunction
 
 function! s:goyo_leave()
