@@ -90,8 +90,9 @@ let mapleader = ","                  " Remap leader key to comma
 " Clear current search
 nnoremap <leader><space> :noh<cr>
 
-" Open a new vertical split and switch to it
+" Open a new vertical/horizontal split and switch to it
 nnoremap <leader>n <C-w>v<C-w>l
+nnoremap <leader>h <C-w>n<C-w>l
 
 " Close the current buffer
 nnoremap <leader>w :bd<cr>

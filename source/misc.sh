@@ -38,7 +38,7 @@ command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] &
 command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 
 # Source liquidprompt from vendor directory
-source $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
 
 # Return true so first prompt uses 0 as last exit code
 true
