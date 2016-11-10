@@ -11,6 +11,7 @@ Plug 'jacoborus/tender'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
@@ -136,6 +137,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " ===== goyo / limelight =====
 let g:seoul256_background = 236
 set background=dark
+
+let g:goyo_width = 100
 
 function! s:goyo_enter()
     if (&ft=='md')
