@@ -8,6 +8,11 @@ function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
+# Build the most recently modified .tex file in the current directory
+function xe() {
+	xelatex $(\ls -t *.tex | head -n1)
+}
+
 # Exports all variables present in an .env file
 function expenv() {
 	local envFile=${1:-".env"}
