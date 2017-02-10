@@ -23,6 +23,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'Valloric/YouCompleteMe'
+Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -167,6 +168,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " ===== tender =====
 let g:airline_theme = 'tender'
 let macvim_skip_colorscheme = 1
+
+" ===== vimwiki =====
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
 " ===== vim-airline =====
 set laststatus=2
