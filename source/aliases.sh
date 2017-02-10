@@ -120,3 +120,6 @@ alias timepy="python -m timeit"
 
 # Shorter dotfile update command
 alias dot="dotfiles"
+
+# Build the most recently modified .tex file in the current directory
+alias xe="xelatex $(\ls -t *.tex | head -n1)"
