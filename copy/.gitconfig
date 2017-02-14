@@ -9,6 +9,8 @@
 	goto = checkout -B
 	# Reset the previous commit but keep all changes
 	undo = reset HEAD~1 --mixed
+	# Revert to the previous HEAD (keep untracked files)
+	nuke = reset --hard HEAD
 	# Amend a commit, adding modifications/deletions but not new files
 	amend = commit -a --amend
 	# Rename a local branch
