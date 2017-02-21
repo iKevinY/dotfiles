@@ -4,3 +4,6 @@
 [submodule "vendor/vim-plug"]
 	path = vendor/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule "vendor/tpm"]
+	path = vendor/tpm
+	url = https://github.com/tmux-plugins/tpm.git
