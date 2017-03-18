@@ -10,6 +10,7 @@ function cdf() { # short for `cdfinder`
 
 # Build the most recently modified .tex file in the current directory
 function xe() {
+	\ls -t *.tex 2> /dev/null || echo "No .tex files found in current directory." && return
 	xelatex $(\ls -t *.tex | head -n1)
 }
 
