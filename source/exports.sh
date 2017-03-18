@@ -26,3 +26,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # More convenient trigger sequence for fzf
 export FZF_COMPLETION_TRIGGER=','
+
+# Use ripgrep for fzf if installed
+if command -v rg >/dev/null 2>&1; then
+	export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+fi
