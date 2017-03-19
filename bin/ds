@@ -1,0 +1,59 @@
+#!/usr/bin/python
+
+import os
+import sys
+from subprocess import Popen, PIPE
+
+
+def run_command(cmd):
+    p = Popen(cmd.split(' '), stdout=PIPE, stderr=PIPE)
+    stdout, stderr = p.communicate()
+    return stdout, stderr, p.returncode
+
+
+def main(cmd):
+    dropbox = os.path.expanduser('~/Dropbox')
+    ds_path = os.path.join(dropbox, '.ds')
+
+    if not os.path.isdir(dropbox):
+        print("Dropbox is not installed.")
+        sys.exit(1)
+
+    stdout, _, code = run_command('git remote -v')
+
+    if code != 0:
+        print("Not currently in a Git repository.")
+        sys.exit(1)
+
+    # Convert a Git remote listing to the form `user_repo`
+    repo = '_'.join(stdout.split('\n')[0].split()[1].split('/')[-2:]).replace('.git', '')
+
+    if not os.path.exists(ds_path):
+        os.makedirs(ds_path)
+
+    diff_path = os.path.join(dropbox, '.ds', repo)
+
+    if cmd == 'push':
+        diff = run_command('git diff HEAD')[0]
+        with open(diff_path, 'w') as f:
+            f.write(diff)
+            print("Wrote diff to `{}`.".format(diff_path))
+
+    elif cmd == 'pull':
+        _, err, code = run_command('git apply {}'.format(diff_path))
+        if code == 0:
+            print("Successfully pulled diff from `{}`.".format(diff_path))
+        else:
+            print("Ran into error with `git apply`:")
+            print(err)
+            sys.exit(1)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        main('push')
+    elif sys.argv[1].lower() not in ('push', 'pull'):
+        print("Unrecognized subcommand '{}'".format(sys.argv[1]))
+        sys.exit(1)
+    else:
+        main(sys.argv[1].lower())
