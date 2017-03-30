@@ -14,11 +14,11 @@ fi
 
 # Use exa in place of ls if installed
 if command -v exa >/dev/null 2>&1; then
-	alias l="exa -l"
+	alias l="exa -l --git"
 	alias ls="exa"
-	alias la="exa -la"
-	alias lt="exa -lRT"
-	alias lta="exa -laRT"
+	alias la="exa -la --git"
+	alias lt="exa -lRT --git"
+	alias lta="exa -laRT --git"
 else
 	# Use coloured output for `ls`
 	alias ls="command ls ${colorflag}"
