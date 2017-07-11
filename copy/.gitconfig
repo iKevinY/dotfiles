@@ -5,6 +5,8 @@
 	s = status -s
 	# Commit all changes
 	ca = !git add -A && git commit -av
+	# Commit all changes and include a commit message
+	cam = !git add -A && git commit -avm
 	# Switch to a branch, creating it if necessary
 	goto = checkout -B
 	# Reset the previous commit but keep all changes
