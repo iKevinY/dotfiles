@@ -11,7 +11,7 @@ function cdf() { # short for `cdfinder`
 # Build the most recently modified .tex file in the current directory
 function xe() {
 	if test -n "$(find . -maxdepth 1 -name '*.tex' -print -quit)"; then
-		texfot xelatex $(\ls -t *.tex | head -n1)
+		texfot xelatex $@ $(\ls -t *.tex | head -n1)
 	else
 		echo "No .tex files found in current directory."
 	fi
