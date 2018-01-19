@@ -17,6 +17,15 @@ function xe() {
 	fi
 }
 
+# Open the most recently modified .pdf file in the current directory
+function xo() {
+	if test -n "$(find . -maxdepth 1 -name '*.pdf' -print -quit)"; then
+		open $(\ls -t *.pdf | head -n1)
+	else
+		echo "No .pdf files found in current directory."
+	fi
+}
+
 # Exports all variables present in an .env file
 function expenv() {
 	local envFile=${1:-".env"}
