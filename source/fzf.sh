@@ -9,12 +9,20 @@ bind '"\C-g\C-t": "$(gt)\e\C-e\er"'
 bind '"\C-g\C-h": "$(gh)\e\C-e\er"'
 bind '"\C-g\C-r": "$(gr)\e\C-e\er"'
 
+bind -x '"\C-p": fvim;'
+
 is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
 fzf-down() {
   fzf --height 100% "$@" --border
+}
+
+fvim() {
+  local IFS=$'\n'
+  local files=($(fzf-down --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
 gf() {
@@ -43,7 +51,7 @@ gt() {
 
 gh() {
   is_in_git_repo || return
-  git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
+  git log --graph --oneline --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
