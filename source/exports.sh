@@ -29,7 +29,7 @@ export FZF_COMPLETION_TRIGGER=','
 
 # Add previews to fzf shortcuts
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-export FZF_DEFAULT_OPTS='--height 80%'
+export FZF_DEFAULT_OPTS='--height 80% --preview-window right:70%'
 
 # Use ripgrep for fzf if installed
 if command -v rg >/dev/null 2>&1; then

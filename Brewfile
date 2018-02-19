@@ -16,6 +16,7 @@ brew 'fzf'
 brew 'gawk'  # improves tmux-fingers
 brew 'gcc'
 brew 'git'
+brew 'highlight'
 brew 'httpie'
 brew 'hub'
 brew 'lynx'
