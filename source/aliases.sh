@@ -38,6 +38,9 @@ fi
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Prefer coloured grep
+alias grep="grep --color=auto"
+
 # Gzip-enabled `curl`
 alias gurl='curl --compressed'
 
