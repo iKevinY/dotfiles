@@ -23,3 +23,11 @@ function dotfiles() {
 }
 
 src
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# This is a fix for mosh-ing into this machine?
+export PATH="$PATH:/usr/local/bin"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

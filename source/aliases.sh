@@ -126,3 +126,6 @@ alias timepy="python -m timeit"
 
 # Shorter dotfile update command
 alias dot="dotfiles"
+
+# Pasteboard length
+alias pbc="pbpaste | wc -c"

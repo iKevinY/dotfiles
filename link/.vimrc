@@ -58,7 +58,7 @@ set encoding=utf-8                   " Set file encoding
 set updatetime=500                   " Decrease update time to 500ms
 set splitbelow                       " Open new vertical panes below
 set splitright                       " Open new horizontal panes to the right
-set diffopt+=vertical                " Use vertical diffs by default
+" set diffopt+=vertical                " Use vertical diffs by default
 set breakindent                      " Visually indent wrapped lines
 
 " Disable swap files
@@ -171,7 +171,8 @@ let g:airline_theme = 'tender'
 let macvim_skip_colorscheme = 1
 
 " ===== vimwiki =====
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 " ===== vim-airline =====
 set laststatus=2
