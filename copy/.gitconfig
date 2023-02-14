@@ -68,6 +68,8 @@
 	trustctime = false
 [diff]
 	compactionHeuristic = true
+[pager]
+	branch = false
 [push]
 	default = simple
 [merge]
