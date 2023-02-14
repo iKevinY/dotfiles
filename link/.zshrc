@@ -26,6 +26,7 @@ function dotfiles() {
 src
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /opt/homebrew/etc/profile.d/z.sh ] && source /opt/homebrew/etc/profile.d/z.sh
 
 
 # If you come from bash you might have to change your $PATH.

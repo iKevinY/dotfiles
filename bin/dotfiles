@@ -181,7 +181,7 @@ fi
 # Initialize.
 if [[ ! -d $DOTFILES ]]; then
   e_header "Downloading dotfiles…"
-  git clone --recursive git://github.com/$GITHUB_USER/dotfiles.git $DOTFILES
+  git clone --recursive git@github.com:$GITHUB_USER/dotfiles.git $DOTFILES
   cd $DOTFILES || exit
 elif [[ "$1" != "restart" ]]; then
   # Make sure we have the latest files.
