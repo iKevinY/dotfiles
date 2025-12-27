@@ -242,19 +242,22 @@ fi
 # Install zsh-autosuggestions plugin if oh-my-zsh is present
 if [[ -d "$HOME/.oh-my-zsh" ]] && [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]]; then
   e_header "Installing zsh-autosuggestions plugin…"
-  git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 fi
 
 # Change default shell to zsh if available and not already the default
-if [[ "$(type -P zsh)" ]] && [[ "$SHELL" != "$(which zsh)" ]]; then
-  e_header "Changing default shell to zsh…"
-  if [[ -f /etc/shells ]] && ! grep -q "$(which zsh)" /etc/shells; then
-    e_arrow "Adding zsh to /etc/shells (requires sudo)"
-    echo "$(which zsh)" | sudo tee -a /etc/shells > /dev/null
+if [[ "$(type -P zsh)" ]]; then
+  zsh_path="$(which zsh)"
+  if [[ "$SHELL" != "$zsh_path" ]]; then
+    e_header "Changing default shell to zsh…"
+    if [[ -f /etc/shells ]] && ! grep -q "$zsh_path" /etc/shells; then
+      e_arrow "Adding zsh to /etc/shells (requires sudo)"
+      echo "$zsh_path" | sudo tee -a /etc/shells > /dev/null
+    fi
+    e_arrow "Setting zsh as default shell (requires password)"
+    chsh -s "$zsh_path"
+    e_success "Default shell changed to zsh. Please log out and log back in for changes to take effect."
   fi
-  e_arrow "Setting zsh as default shell (requires password)"
-  chsh -s "$(which zsh)"
-  e_success "Default shell changed to zsh. Please log out and log back in for changes to take effect."
 fi
 
 # Alert if backups were made.
