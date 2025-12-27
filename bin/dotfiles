@@ -245,6 +245,12 @@ if [[ -d "$HOME/.oh-my-zsh" ]] && [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom
   git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 fi
 
+# Install zsh-syntax-highlighting plugin if oh-my-zsh is present
+if [[ -d "$HOME/.oh-my-zsh" ]] && [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]]; then
+  e_header "Installing zsh-syntax-highlighting plugin…"
+  git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+fi
+
 # Change default shell to zsh if available and not already the default
 if [[ "$(type -P zsh)" ]]; then
   zsh_path="$(which zsh)"
