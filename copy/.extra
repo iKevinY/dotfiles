@@ -1,0 +1,7 @@
+# ~/.extra can be used for settings you don't want to commit.
+# This file is sourced by both bash and zsh configurations.
+# Add your custom aliases, functions, and environment variables here.
+
+# Example:
+# export EDITOR="vim"
+# alias myalias="echo 'Hello World'"
