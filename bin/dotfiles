@@ -169,6 +169,7 @@ fi
 # with recent XCode or CLT)
 if [[ ! "$(type -P git)" ]] && is_ubuntu; then
   e_header "Installing Git"
+  sudo apt-get update -qq
   sudo apt-get -qq install git-core
 fi
 
@@ -178,10 +179,21 @@ if [[ ! "$(type -P git)" ]]; then
   exit 1
 fi
 
+# If zsh is not installed, install it (Ubuntu only)
+if [[ ! "$(type -P zsh)" ]] && is_ubuntu; then
+  e_header "Installing zsh"
+  sudo apt-get update -qq
+  sudo apt-get -qq install zsh
+fi
+
 # Initialize.
 if [[ ! -d $DOTFILES ]]; then
   e_header "Downloading dotfiles…"
-  git clone --recursive git@github.com:$GITHUB_USER/dotfiles.git $DOTFILES
+  git clone --recursive https://github.com/$GITHUB_USER/dotfiles.git $DOTFILES
+  if [[ ! -d $DOTFILES ]]; then
+    e_error "Git clone failed. Aborting."
+    exit 1
+  fi
   cd $DOTFILES || exit
 elif [[ "$1" != "restart" ]]; then
   # Make sure we have the latest files.
@@ -214,6 +226,45 @@ backup=""
 # Execute code for each file in these subdirectories.
 do_stuff "copy"
 do_stuff "link"
+
+# Install oh-my-zsh if not present and zsh is available
+if [[ "$(type -P zsh)" ]] && [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+  e_header "Installing oh-my-zsh…"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+# Install powerlevel10k if oh-my-zsh is present
+if [[ -d "$HOME/.oh-my-zsh" ]] && [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+  e_header "Installing powerlevel10k theme…"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+fi
+
+# Install zsh-autosuggestions plugin if oh-my-zsh is present
+if [[ -d "$HOME/.oh-my-zsh" ]] && [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]]; then
+  e_header "Installing zsh-autosuggestions plugin…"
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+fi
+
+# Install zsh-syntax-highlighting plugin if oh-my-zsh is present
+if [[ -d "$HOME/.oh-my-zsh" ]] && [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]]; then
+  e_header "Installing zsh-syntax-highlighting plugin…"
+  git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+fi
+
+# Change default shell to zsh if available and not already the default
+if [[ "$(type -P zsh)" ]]; then
+  zsh_path="$(which zsh)"
+  if [[ "$SHELL" != "$zsh_path" ]]; then
+    e_header "Changing default shell to zsh…"
+    if [[ -f /etc/shells ]] && ! grep -q "$zsh_path" /etc/shells; then
+      e_arrow "Adding zsh to /etc/shells (requires sudo)"
+      echo "$zsh_path" | sudo tee -a /etc/shells > /dev/null
+    fi
+    e_arrow "Setting zsh as default shell (requires password)"
+    chsh -s "$zsh_path"
+    e_success "Default shell changed to zsh. Please log out and log back in for changes to take effect."
+  fi
+fi
 
 # Alert if backups were made.
 if [[ "$backup" ]]; then
