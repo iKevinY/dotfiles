@@ -117,5 +117,5 @@ fi
 export SHELL=/bin/zsh
 
 # Extra local aliases and such
-source $HOME/.extra
+[ -f ~/.extra ] && source ~/.extra
 
