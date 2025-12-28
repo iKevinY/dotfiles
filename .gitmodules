@@ -1,6 +1,3 @@
-[submodule "vendor/liquidprompt"]
-	path = vendor/liquidprompt
-	url = https://github.com/nojhan/liquidprompt.git
 [submodule "vendor/vim-plug"]
 	path = vendor/vim-plug
 	url = https://github.com/junegunn/vim-plug

@@ -26,7 +26,11 @@ function dotfiles() {
 src
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /opt/homebrew/etc/profile.d/z.sh ] && source /opt/homebrew/etc/profile.d/z.sh
+
+# Enable zoxide if installed
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
 
 
 # If you come from bash you might have to change your $PATH.
@@ -113,8 +117,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export SHELL=/bin/zsh
 
 # Extra local aliases and such
 [ -f ~/.extra ] && source ~/.extra

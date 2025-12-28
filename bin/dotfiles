@@ -186,6 +186,32 @@ if [[ ! "$(type -P zsh)" ]] && is_ubuntu; then
   sudo apt-get -qq install zsh
 fi
 
+# If fzf is not installed, install it (Ubuntu only)
+if [[ ! "$(type -P fzf)" ]] && is_ubuntu; then
+  e_header "Installing fzf"
+  sudo apt-get update -qq
+  sudo apt-get -qq install fzf
+fi
+
+# If ripgrep is not installed, install it (Ubuntu only)
+if [[ ! "$(type -P rg)" ]] && is_ubuntu; then
+  e_header "Installing ripgrep"
+  sudo apt-get update -qq
+  sudo apt-get -qq install ripgrep
+fi
+
+# If zoxide is not installed, install it (Ubuntu only)
+if [[ ! "$(type -P zoxide)" ]] && is_ubuntu; then
+  e_header "Installing zoxide"
+  # zoxide requires curl for installation via script
+  if [[ ! "$(type -P curl)" ]]; then
+    sudo apt-get update -qq
+    sudo apt-get -qq install curl
+  fi
+  # Install zoxide using official installer
+  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+fi
+
 # Initialize.
 if [[ ! -d $DOTFILES ]]; then
   e_header "Downloading dotfiles…"
