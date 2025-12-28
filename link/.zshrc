@@ -114,8 +114,6 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export SHELL=/bin/zsh
-
 # Extra local aliases and such
 [ -f ~/.extra ] && source ~/.extra
 

@@ -37,9 +37,6 @@ command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] &
 # Enable z if installed
 command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 
-# Source liquidprompt from vendor directory
-[[ $- = *i* ]] && source $HOME/.dotfiles/vendor/liquidprompt/liquidprompt
-
 # Alias hub as git if installed
 command -v hub >/dev/null 2>&1 && eval "$(hub alias -s)"
 
