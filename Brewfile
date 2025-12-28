@@ -30,7 +30,8 @@ brew 'tree'
 brew 'reattach-to-user-namespace'  # copy-paste for tmux
 brew 'vim'
 brew 'wget'
-brew 'z'
+brew 'zoxide'
+brew 'ripgrep'
 
 # Applications
 cask 'alfred'

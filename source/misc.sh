@@ -34,8 +34,10 @@ command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] &
 # Enable fzf if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Enable z if installed
-command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
+# Enable zoxide if installed
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init bash)"
+fi
 
 # Alias hub as git if installed
 command -v hub >/dev/null 2>&1 && eval "$(hub alias -s)"
